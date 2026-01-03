@@ -173,6 +173,50 @@ python main.py
 
 The first run will create the vector database (takes ~1 minute). Subsequent runs will load the existing database instantly.
 
+### 🌐 Web Interface (Recommended!)
+
+For a more user-friendly experience, use the Streamlit web interface:
+
+```bash
+streamlit run streamlit_app.py
+```
+
+This will open a beautiful web interface in your browser with:
+- **Interactive chat** with the research assistant
+- **Settings panel** to adjust parameters on the fly
+- **Paper fetching interface** to download papers from the UI
+- **Browse papers** to see what's in your database
+- **Database management** (rebuild, clear, stats)
+- **No command-line needed** - everything in the browser!
+
+**Features:**
+- ⚙️ Adjust settings (model, chunk size, results count) without editing code
+- 📥 Fetch papers directly from the UI
+- 📊 See database stats in real-time
+- 💬 Clean chat interface with message history
+- 📚 Browse downloaded papers
+- 🔧 One-click database rebuild
+
+**Recommended for:**
+- First-time users
+- Non-technical users
+- Anyone who prefers a visual interface
+- Experimenting with different settings
+
+### 📟 Command-Line Interface
+
+Prefer the terminal? Use the CLI version:
+
+```bash
+python main.py
+```
+
+**Recommended for:**
+- Power users
+- Scripting and automation
+- Minimal resource usage
+- SSH/remote sessions
+
 ---
 
 ## Example Usage
@@ -348,9 +392,9 @@ Ideas for extending this project (not implemented in MVP):
 
 ### Integrations
 - **Slack/Discord bot**: Make the assistant available in team chat
-- **Web interface**: Build a Streamlit or Gradio UI
 - **Conference filtering**: Filter by specific venues (NeurIPS, ICML, ACL, etc.)
 - **Arxiv categories**: Support more categories beyond AI/ML
+- **Mobile app**: React Native or Flutter mobile interface
 
 ### Quality Improvements
 - **Use Claude for long context**: Summarize entire papers (100+ pages) using Claude's 200K context
@@ -396,7 +440,8 @@ arxiv-rag-agent/
 ├── documents/              # Stores fetched paper abstracts (.txt files)
 ├── chroma_db/             # Persistent vector database (gitignored)
 ├── load_papers.py         # Script to fetch papers from arXiv
-├── main.py                # Main RAG agent chatbot
+├── main.py                # CLI RAG agent chatbot
+├── streamlit_app.py       # Web interface (Streamlit) - RECOMMENDED!
 ├── requirements.txt       # Python dependencies
 ├── .env.example           # Environment variable template
 ├── .env                   # Your API keys (gitignored)
@@ -414,6 +459,7 @@ arxiv-rag-agent/
 - **OpenAI API**: GPT-4 for reasoning, embeddings for semantic search
 - **Chroma**: Vector database for persistent storage
 - **arXiv API**: Research paper source
+- **Streamlit**: Beautiful web interface for easy interaction
 - **python-dotenv**: Environment variable management
 
 ---
